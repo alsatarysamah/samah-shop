@@ -1,0 +1,10 @@
+.item{
+    border:1px solid #ffc000;
+    margin: 1rem;
+  }
+  .item img{
+    width: 100%;
+    max-width: 300px;
+  }
+
+  
