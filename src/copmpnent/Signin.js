@@ -1,8 +1,7 @@
-
 import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 // import { toast, ToastContainer } from "react-toastify";
-import {  useState } from "react";
+import { useState } from "react";
 
 import { toast, ToastContainer } from "react-toastify";
 import superAgent from "superagent";
@@ -14,24 +13,23 @@ export default function Signin() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-     
       const response = await superAgent
         .post("http://localhost:4000/signin")
         .set("authorization", `Basic ${base64.encode(`${email}:${password}`)}`);
-        console.log(response.body.user);
+
       sessionStorage.setItem("userInfo", JSON.stringify(response.body.user));
       // if (location.state) navigate(`${location.state.redirect}`);
-       navigate("/");
+      navigate("/");
     } catch (err) {
       toast.error("invalid password or username");
       console.log(err);
     }
   };
- 
+
   return (
     <Container>
       <Helmet>
@@ -73,7 +71,11 @@ export default function Signin() {
                     </Form.Group>
 
                     <div className="d-grid">
-                      <Button className="general-btn" variant="primary" type="submit">
+                      <Button
+                        className="general-btn"
+                        variant="primary"
+                        type="submit"
+                      >
                         Signin
                       </Button>
                     </div>

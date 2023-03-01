@@ -37,7 +37,7 @@ function EditItem() {
     formData.append("price", price);
     formData.append("description", description);
     formData.append("image", image);
-    console.log({ formData });
+    
     await api(
       `http://localhost:4000/item/${id}`,
       "put",
@@ -45,7 +45,7 @@ function EditItem() {
       { name, price, description, image }
     )
       .then((data) => {
-        console.log(data);
+       
       })
       .catch((err) => console.log(err));
   };

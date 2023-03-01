@@ -23,7 +23,7 @@ const navigate=useNavigate();
         getItem("userInfo").token,
         newItem
       ).then((data) => {
-        console.log({ data });
+       
         if (data) {
           toast.success("Added");
           navigate("/itemstable");

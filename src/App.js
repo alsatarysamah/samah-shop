@@ -9,6 +9,7 @@ import ItemsTable from "./copmpnent/ItemsTable/ItemsTable";
 import EditItem from "./copmpnent/EditItem/EditItem"
 import AddNewItem from "./copmpnent/NewItem/NewItem";
 import Favorites from "./copmpnent/Fav";
+import CartScreen from "./copmpnent/cartScreen";
 function App() {
   return (
     <div className="d-flex flex-column site">
@@ -24,6 +25,8 @@ function App() {
           <Route path="/edititem/:id" element={< EditItem/>} />
           <Route path="/newitem" element={<AddNewItem />} />
           <Route path="/fav" element={<Favorites />} />
+          <Route path="/cart" element={<CartScreen />} />
+
 
 
 

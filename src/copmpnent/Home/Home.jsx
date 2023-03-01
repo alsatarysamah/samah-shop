@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, ToastContainer } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
 import { getItem } from "../../sessionStorage";
 import { api } from "../../api";
 import Item from "../Item/Item";
+import { item } from "../../dummyData";
 
 export default function Home() {
   const [items, setitems] = useState([]);
@@ -16,7 +17,7 @@ export default function Home() {
         "",
         ""
       ).then((data) => {
-        console.log(data);
+     
         setitems(data);
       });
     };
@@ -27,6 +28,7 @@ export default function Home() {
       <Helmet>
         <title>Amazon</title>
       </Helmet>
+      <ToastContainer/>
       <h1 className="mx-5">list of item</h1>
       <Row>
         <div className="d-flex flex-wrap justify-content-center">

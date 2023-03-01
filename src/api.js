@@ -21,7 +21,7 @@ export const api = async (url, method, token, body, username, password) => {
     };
 
     const response = await axios(options);
-    console.log(response.data);
+  
     return response.data;
   } catch (e) {
     console.log(e);

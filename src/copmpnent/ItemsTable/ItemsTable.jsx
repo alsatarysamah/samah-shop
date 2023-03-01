@@ -116,7 +116,7 @@ export default function ItemsTable({ data }) {
 
   const fetchData = async () => {
     await api(`http://localhost:4000/item?userId=${getItem("userInfo").id}`, "get", "", "").then((data) => {
-      console.log({ data });
+      
       setItems(data);
     });
   };

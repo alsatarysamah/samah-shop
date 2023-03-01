@@ -28,8 +28,11 @@ function CollapsibleNavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto "></Nav>
           <Nav className="d-flex align-items-center">
+          <Nav.Link as={Link} to="/cart">
+            Cart
+            </Nav.Link>
           <Nav.Link as={Link} to="/fav">
-            fav
+            Fav
             </Nav.Link>
             <Nav.Link as={Link} to="/itemstable">
              Items
